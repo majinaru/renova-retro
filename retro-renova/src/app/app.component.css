@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #f5f5f5; /* Cinza muito sutil */
+  margin: 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que o cabeçalho fique sobre outros conteúdos */
+  background-color: #34495e; /* Cor de fundo do seu cabeçalho */
+}
+
+.nav-main {
+  display: flex;
+  justify-content: space-between; /* Melhor alinhamento */
+  align-items: center;
+  padding: 0 50px; /* Espaçamento lateral */
+}
+
+.container-main {
+  display: flex; /* Habilita o uso de flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  text-align: center; /* Certifica que o texto também esteja centralizado */
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+.nav-main a {
+  color: #1abc9c; /* Cor vibrante para os links */
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 15px; /* Espaçamento entre os links */
+}
+
+.nav-brand {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.menu-items {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu-items li {
+  padding: 0 10px;
+}
+
+button {
+  background-color: #1abc9c; /* Cor vibrante para o botão */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px; /* Correção de margem */
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #16a085; /* Efeito ao passar o mouse */
+}
+
+.container-section {
+  background-color: #ecf0f1; /* Cinza claro para a seção */
+  padding: 20px 0; /* Padding vertical */
+}
+
+.container-section h2 {
+  padding-left: 200px; /* Alinhamento do título */
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 40px 20px 40px;
+}
+li img {
+  border: 2px solid black;
+  width: 20em;
+}
+.container-referencia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 400px;
+  width: 100%;
+  padding: 40px;
+}
+.container-referencia img {
+  height: 300px;
+  padding-right: 100px;
+}
+.container-referencia p {
+  width: 400px;
+}
+.container-referencia button {
+  margin-left: 70px;
+}
+footer {
+  background-color: #34495e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}

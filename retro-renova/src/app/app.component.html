@@ -1,0 +1,74 @@
+<header class="nav-container">
+  <nav class="nav-main">
+    <a class="nav-brand" href="">Retro Renova</a>
+    <ul class="menu-items">
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#referencia">Referencia</a></li>
+      <li>
+        <a href="https://github.com/majinaru/renova-retro" target="_blank"
+          >github</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="container-main">
+    <img [src]="processedImageUrl" alt="Processed Image" class="center-image" />
+    <!-- Botão visível que o usuário vai clicar -->
+    <button
+      id="como-funciona"
+      (click)="fileInput.click()"
+      class="file-upload-button"
+    >
+      Escolha uma imagem
+    </button>
+
+    <!-- Input de arquivo oculto -->
+    <input
+      type="file"
+      #fileInput
+      (change)="onFileSelected($event)"
+      accept="image/*"
+      style="display: none"
+    />
+  </div>
+</main>
+<section class="container-section">
+  <h2>Como funciona?</h2>
+  <div>
+    <ul>
+      <hr />
+      <li>
+        <p>Informação 1</p>
+        <img src="assets/images/image1.png" alt="" />
+      </li>
+      <hr />
+      <li>
+        <img src="assets/images/image2.png" alt="" />
+        <p>informação 2</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="container-referencia">
+  <img src="assets/images/referencia.png" alt="" />
+  <div id="referencia">
+    <h2>Nossa Referência</h2>
+    <p>
+      Nosso trabalho é uma aplicação direta do artigo entitulado "Depixelizing
+      Pixel Art" feito por Johannes Kopf e Dani Lischinski pela The Hebrew
+      University
+    </p>
+    <a href="https://johanneskopf.de/publications/pixelart/" target="_blank">
+      <button>Ver mais</button></a
+    >
+  </div>
+</section>
+<footer>
+  <p>Todos os direitos reservados</p>
+  <div>
+    <img src="" alt="" />
+  </div>
+  <img src="" alt="" />
+</footer>
