@@ -20,4 +20,4 @@ ng serve
 
 # Reference
 
-This website is a direct application of the algorithm described by Johannes Kopf and Dani Lischinski of The Hebrew University. Their paper is titled (Depixiling Pixel Art)[https://johanneskopf.de/publications/pixelart/]
+This website is a direct application of the algorithm described by Johannes Kopf and Dani Lischinski of The Hebrew University. Their paper is titled [Depixelizing Pixel Art](https://johanneskopf.de/publications/pixelart/)
