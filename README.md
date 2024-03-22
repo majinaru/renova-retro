@@ -6,13 +6,9 @@ In the original image, pixels are depicted on a square pixel lattice, where diag
 
 ## How to Use
 
-To run the website local, you need to initiate the Flask server located in the "Backend" folder using the following command:
+### Requirements
 
-```bash
-python3 server.py
-```
-
-It's crucial to ensure that you have installed the Angular CLI:
+Before getting started, it's crucial to ensure that you have installed the Angular CLI:
 
 ```bash
 npm install -g @angular/cli
@@ -23,6 +19,14 @@ And all the necessary libraries for executing server.py. Double-check that all r
 ```bash
 pip install flask flask-cors networkx numpy matplotlib scipy opencv-python-headless
 
+```
+
+### Running the website
+
+To run the website locallly, you need to initiate the Flask server located in the "Backend" folder using the following command:
+
+```bash
+python3 server.py
 ```
 
 Furthermore, you should initiate the Angular server by running the following command within the "renova-retro" folder:
