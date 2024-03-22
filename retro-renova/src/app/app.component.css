@@ -79,7 +79,7 @@ button:hover {
 
 .container-section {
   background-color: #ecf0f1; /* Cinza claro para a seção */
-  padding: 20px 0; /* Padding vertical */
+  padding: 20px; /* Padding vertical */
 }
 
 .container-section h2 {

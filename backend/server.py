@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify, send_from_directory
-from flask_cors import CORS
-from PIL import Image
 import os
+from flask_cors import CORS
+import subprocess
+import logging
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["http://localhost:4200"])
 
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -13,30 +14,34 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def upload_image():
     file = request.files['image']
     if file:
-        filename = "processed_image"
+        filename = "uploaded_image.jpg"
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
         # Salva a imagem original temporariamente
-        temp_path = file_path + "_temp"
-        file.save(temp_path)
+        file.save(file_path)
+        logging.info(f'Imagem salva em: {file_path}')
 
-        # Abre a imagem original e redimensiona
-        with Image.open(temp_path) as img:
-            # Converte para RGB se a imagem for RGBA (contém canal alfa)
-            if img.mode == 'RGBA':
-                img = img.convert('RGB')
-            
-            img.thumbnail((800, 800))  # Redimensiona a imagem
-            img.save(file_path, "JPEG")  # Salva a imagem redimensionada
+        # Chama o script de processamento de imagem
+        process_path = os.path.join(app.config['UPLOAD_FOLDER'], 'image_processing.py')
+        result = subprocess.run(['python', process_path, file_path], check=True)
+        logging.info(f'Script de processamento executado: {result}')
 
-        # Remove a imagem original temporária
-        os.remove(temp_path)
-
-        return jsonify(processedImageUrl=f'/uploads/{filename}')
+        processed_image_filename = 'voronoi_diagram.png'
+        processed_image_path = os.path.join(app.config['UPLOAD_FOLDER'], processed_image_filename)
+        
+        # Verifica se a imagem processada existe
+        if os.path.exists(processed_image_path):
+            url = f'/uploads/{processed_image_filename}'
+            logging.info(f'Enviando URL da imagem processada: {url}')
+            return jsonify({"processedImageUrl": url})
+        else:
+            logging.error("Imagem processada não encontrada.")
+            return jsonify(error="Image processing failed."), 500
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
     app.run(debug=True)
