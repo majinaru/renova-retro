@@ -12,7 +12,14 @@ To run the website local, you need to initiate the Flask server located in the "
 python3 server.py
 ```
 
-It's crucial to ensure that you have installed the Angular CLI and all the necessary libraries for executing server.py. Double-check that all required libraries are installed in your environment. Furthermore, you should initiate the Angular server by running the following command within the "renova-retro" folder:
+It's crucial to ensure that you have installed the Angular CLI and all the necessary libraries for executing server.py. Double-check that all required libraries are installed in your environment:
+
+```bash
+pip install flask flask-cors networkx numpy matplotlib scipy opencv-python-headless
+
+```
+
+Furthermore, you should initiate the Angular server by running the following command within the "renova-retro" folder:
 
 ```bash
 ng serve
