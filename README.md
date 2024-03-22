@@ -35,6 +35,8 @@ Furthermore, you should initiate the Angular server by running the following com
 ng serve
 ```
 
+Navigate to `http://localhost:4200/` to see it working
+
 ## Reference
 
 This website is a direct application of the algorithm described by Johannes Kopf and Dani Lischinski of The Hebrew University. Their paper is titled [Depixelizing Pixel Art](https://johanneskopf.de/publications/pixelart/)
